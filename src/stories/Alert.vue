@@ -5,7 +5,7 @@
                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" :class="color" v-html="icon"></svg>
             </span>
             <div class="space-y-1">
-                <h4 class="leading-6" :class="description ? 'font-medium':''">{{title}}</h4>
+                <h4 class="leading-5" :class="description ? 'font-medium':''">{{title}}</h4>
                 <p class="text-sm">{{description}}</p>
             </div>
         </div>
