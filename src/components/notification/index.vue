@@ -12,7 +12,7 @@
             :leave-from-class="transitionLeaveFrom"
             :leave-to-class="transitionLeaveTo"
             >
-                <div :class="direction" class="fixed w-full sm:w-1/4 bg-white shadow-lg space-y-2 p-4 border border-gray-100 z-10" v-show="show">
+                <div :class="direction" class="fixed w-full sm:w-1/4 bg-white shadow-xl space-y-2 p-4 border border-gray-100 z-10" v-show="show">
                     <div class="flex justify-between items-center">
                         <div class="flex items-center">
                             <span v-show="showIcon" class="mr-2">
