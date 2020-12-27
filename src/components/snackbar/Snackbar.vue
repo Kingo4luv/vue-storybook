@@ -11,7 +11,7 @@
             :leave-from-class="transitionLeaveFrom"
             :leave-to-class="transitionLeaveTo"
             >
-            <div :class="`${direction} ${color}`"  class="fixed w-full sm:w-1/4 shadow-xl space-y-2 px-4 py-1 border border-gray-100 z-10 rounded" v-show="show">
+            <div :class="`${direction} ${color}`"  class="fixed w-full sm:w-1/4 shadow-xl space-y-2 px-4 py-1 z-10 rounded" v-show="show">
                 <div class="flex justify-between items-center">
                     <div class="flex items-center">
                         <span v-show="showIcon" class="mr-2">
@@ -99,7 +99,7 @@ export default {
             else if(this.type === "success") {
                 return "bg-green-600 text-white";
             }
-            return "bg-white text-gray-700";
+            return "bg-white text-gray-700 border border-gray-100";
         },
 
         icon(){
