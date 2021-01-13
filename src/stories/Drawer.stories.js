@@ -18,3 +18,30 @@ Default.args = {
   confirmText: "Ok",
   closeText: "Close",
 };
+
+export const Left  = Template.bind({});
+Left.args = {
+  title: "Drawer Title",  
+  visible: false,
+  confirmText: "Ok",
+  closeText: "Close",
+  position: "left"
+};
+
+export const Top  = Template.bind({});
+Top.args = {
+  title: "Drawer Title",  
+  visible: false,
+  confirmText: "Ok",
+  closeText: "Close",
+  position: "top"
+};
+
+export const Bottom  = Template.bind({});
+Bottom.args = {
+  title: "Drawer Title",  
+  visible: false,
+  confirmText: "Ok",
+  closeText: "Close",
+  position: "bottom"
+};
