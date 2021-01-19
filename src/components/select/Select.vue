@@ -47,13 +47,13 @@
                                 </span>
                                 <input v-model="search" type="text" class="w-full py-2 bg-white focus:outline-none text-gray-700 px-2">
                             </div>
-                            <ul v-if="filteredCountry.length > 0" tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-item-3" class="max-h-56 list-none text-base overflow-auto focus:outline-none">
+                            <ul v-if="filteredCountry.length > 0" tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-item-3" class="max-h-56 text-base overflow-auto focus:outline-none">
                                 <!--
                                 Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation.
 
                                 Highlighted: "text-white bg-indigo-600", Not Highlighted: "text-gray-900"
                                 -->
-                                <li tabindex="0" v-for="(country, index) in filteredCountry" @click="select(country)"  role="option" :class="currentCountry.name === country.name ? 'bg-gray-100' : ''" class="text-gray-900 cursor-pointer select-none relative py-2 focus:bg-gray-100 hover:bg-gray-100 -ml-8 " :key="index">
+                                <li tabindex="0" v-for="(country, index) in filteredCountry" @click="select(country)"  role="option" :class="currentCountry.name === country.name ? 'bg-gray-100' : ''" class="text-gray-900 cursor-pointer select-none relative py-2 hover:bg-gray-100 -ml-8 focus:outline-none" :key="index">
                                     <div class="flex items-center px-4" >
                                     
                                         <country-flag :country='country.icon' size='normal'/>
