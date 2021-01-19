@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full h-screen flex justify-center items-center">
+    <div class="w-full h-screen flex justify-center items-center bg-gray-50">
         <div>
             <button class="px-6 py-2 bg-blue-700 text-white rounded" @click="open">Open Notification</button>
         </div>

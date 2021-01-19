@@ -12828,6 +12828,11 @@ void-elements@^3.1.0:
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-3.1.0.tgz#614f7fbf8d801f0bb5f0661f5b2f5785750e4f09"
   integrity sha1-YU9/v42AHwu18GYfWy9XhXUOTwk=
 
+vue-country-flag@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/vue-country-flag/-/vue-country-flag-2.0.3.tgz#f644d8f5150a97f473f0c13e04622c6ede37d1de"
+  integrity sha512-QZM3hNNhnGU+G1qnpq1BiICE4Zh91UA++/UpM0go8XbxkVxTiPy4asWY07vL/3PtW8M69YqWVbhwG13rzvNwkA==
+
 vue-docgen-api@^4.33.1:
   version "4.34.2"
   resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-4.34.2.tgz#282efc6f29fa56a74fdaf567b70c463ba91af8c3"
