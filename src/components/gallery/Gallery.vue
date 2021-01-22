@@ -1,12 +1,12 @@
 <template>
     <div>
-        <div class="w-full h-96 border rounded">
+        <div class="w-full h-48 lg:h-96 ">
             <div class="w-full h-full justify-center flex items-center capitalize overflow-hidden">
                 <img :src="current.image" class="w-full object-cover" alt="">
             </div>
         </div>
-        <div class="w-full flex overflow-auto flex-nowrap">
-            <div class="w-1/4 h-32 flex-none overflow-hidden" :class="gallery.name === current.name ? 'opacity-70 border-4 border-white' : ''"  v-for="(gallery, index) in data" :key="index" @click="chooseCurrent(gallery)">
+        <div class="w-full flex overflow-auto flex-nowrap mt-2">
+            <div class="w-1/5 lg:w-1/6 h-12 lg:h-20 flex-none overflow-hidden border-2" :class="gallery.name === current.name ? 'opacity-70 border-red-600 rounded' : ''"  v-for="(gallery, index) in data" :key="index" @mouseenter="chooseCurrent(gallery)">
                 <img :src="gallery.image" class="w-full h-full object-cover" alt="">
             </div>
         </div>

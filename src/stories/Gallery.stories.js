@@ -16,6 +16,4 @@ const Template = (args, {
 });
 
 export const Default = Template.bind({});
-Default.args = {
-    visible: false,
-};
+Default.args = {};
