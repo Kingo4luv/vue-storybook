@@ -94,9 +94,15 @@ export default {
     components: {
         CountryFlag
     },
+    props:{
+        visible:{
+            type: Boolean,
+            required: true
+        }
+    },
     data(){
         return{
-            open: false,
+            open: this.visible,
             currentCountry: {
                 name: "Nigeria",
                 icon:"ng"

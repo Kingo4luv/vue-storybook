@@ -19,3 +19,8 @@ export const Default = Template.bind({});
 Default.args = {
   visible: false,
 };
+
+export const Open = Template.bind({});
+Open.args = {
+  visible: true,
+};
