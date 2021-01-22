@@ -1,6 +1,6 @@
 <template>
     <div class="w-full h-screen flex">
-           <div class="mx-auto mt-12 w-full sm:w-1/2">
+           <div class="mx-auto mt-12 w-full sm:w-2/5">
                <Gallery />
            </div>
     </div>
