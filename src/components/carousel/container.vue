@@ -15,7 +15,7 @@ export default {
         },
         interval:{
             type: Number,
-            default: 5000
+            default: 4000
         }
     },
     components:{
