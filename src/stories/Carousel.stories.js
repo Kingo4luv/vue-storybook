@@ -16,4 +16,7 @@ const Template = (args, {
 });
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+    autoplay: true,
+    interval: 5000,
+};

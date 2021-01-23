@@ -1,22 +1,14 @@
 <template>
     <div class="w-full h-full">
         <div class="w-full h-full relative overflow-hidden">
-            <transition 
-                enter-active-class="transform transition ease-in-out duration-500"
-                enter-class="translate-x-full"
-                enter-to-class="translate-x-0"
-                leave-active-class="transform transition ease-in-out duration-500"
-                leave-from-class="-translate-x-0"
-                leave-to-class="-translate-x-full"
-            >
-                <div v-show="show" class="w-full h-full absolute">
-                    <img :src="current.image" class="w-full h-full object-cover" alt="">
+            
+                <div v-show="show" class="w-full h-full absolute" @mouseenter="clearTiming" @mouseleave="continueTiming">
+                    <img :src="data[currentIndex].image" class="w-full h-full object-cover" alt="">
                 </div>
-            </transition>
-
+            
             <div class="text-white absolute bottom-6 left-0 w-full flex justify-center items-center ">
                 <div class="flex space-x-2">
-                    <button @click="selectCurrent(i)" class="block h-1 w-5 lg:w-6 cursor-pointer rounded" :class="current.image === img.image ? 'bg-yellow-400' : 'bg-white'" v-for="(img, i) in data" :key="i"></button>
+                    <button @click="selectCurrent(i)" class="block h-1 w-5 lg:w-6 cursor-pointer rounded focus:outline-none" :class="currentIndex === i ? 'bg-yellow-400' : 'bg-white'" v-for="(img, i) in data" :key="i"></button>
                 </div>
             </div>
         </div>
@@ -24,17 +16,27 @@
 </template>
 
 <script>
+let timeout;
 export default {
+    props:{
+        autoplay:{
+            type: Boolean,
+            required: true
+        },
+        interval:{
+            type: Number,
+            default: 5000
+        }
+    },
     mounted(){
-        // this.makeInvisible();
+        if(this.autoplay){
+            this.makeInvisible();
+        }
     },
     data(){
         return{
             show: true,
-            current: {
-                 name: "gallery 1",
-                 image: "https://pixabay.com/get/g6e968ee81a391e9d5468ff4013d72c945a9ec560039fb42f29659a7860be57e3092fa0ddc502bdb3f5afd0b397b14626_640.jpg"
-            },
+            currentIndex: 0,
             data: [
                 {
                     name: "gallery 1",
@@ -73,39 +75,46 @@ export default {
     },
     methods:{
         makeInvisible(){
-            setTimeout(() => {
+           timeout = setTimeout(() => {
                 this.show = false;
                 this.makeVisible();
-            }, 5000)
+            }, this.interval)
         },
         makeVisible(){
-            this.current = this.data[this.nextOptionIndex];
+            this.currentIndex = this.nextOptionIndex;
             this.show = true
             this.makeInvisible();
         },
 
         next(){
             this.show = false
-            this.current = this.data[this.prevOptionIndex];
+            this.currentIndex = this.prevOptionIndex;
             this.show = true
 
         },
         prev(){
             this.show = false
-            this.current = this.data[this.nextOptionIndex];
+            this.currentIndex = this.nextOptionIndex;
             this.show = true
 
         },
         selectCurrent(index){
             this.show = false
-            this.current = this.data[index]
+            this.currentIndex = index
             this.show = true
+            clearTimeout(timeout);
+        },
+        clearTiming(){
+            clearTimeout(timeout);
+        },
+        continueTiming(){
+            this.makeInvisible();
         }
     },
     computed:{
         activeOptionIndex() {
             return this.data.findIndex(
-                x => x.image === this.current.image || x === this.current.image
+                (x, index) => index === this.currentIndex || index === this.currentIndex
             );
         },
         prevOptionIndex() {
