@@ -1,11 +1,9 @@
 <template>
     <div class="w-full h-full">
         <div class="w-full h-full relative overflow-hidden">
-            
                 <div v-show="show" class="w-full h-full absolute" @mouseenter="clearTiming" @mouseleave="continueTiming">
                     <img :src="data[currentIndex].image" class="w-full h-full object-cover" alt="">
                 </div>
-            
             <div class="text-white absolute bottom-6 left-0 w-full flex justify-center items-center ">
                 <div class="flex space-x-2">
                     <button @click="selectCurrent(i)" class="block h-1 w-5 lg:w-6 cursor-pointer rounded focus:outline-none" :class="currentIndex === i ? 'bg-yellow-400' : 'bg-white'" v-for="(img, i) in data" :key="i"></button>
