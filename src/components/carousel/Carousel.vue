@@ -86,13 +86,13 @@ export default {
 
         next(){
             this.show = false
-            this.currentIndex = this.prevOptionIndex;
+            this.currentIndex = this.nextOptionIndex;
             this.show = true
 
         },
         prev(){
             this.show = false
-            this.currentIndex = this.nextOptionIndex;
+            this.currentIndex = this.prevOptionIndex;
             this.show = true
 
         },
