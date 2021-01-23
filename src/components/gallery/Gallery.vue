@@ -2,11 +2,11 @@
     <div>
         <div class="w-full h-48 lg:h-96 ">
             <div class="w-full h-full justify-center flex items-center capitalize overflow-hidden">
-                <img :src="current.image" class="w-full object-cover" alt="">
+                <img :src="data[currentIndex].image" class="w-full object-cover" alt="">
             </div>
         </div>
         <div class="w-full flex overflow-auto flex-nowrap mt-2">
-            <div class="w-1/5 lg:w-1/6 h-12 lg:h-20 flex-none overflow-hidden border-2" :class="gallery.name === current.name ? 'opacity-70 border-red-600 rounded' : ''"  v-for="(gallery, index) in data" :key="index" @mouseenter="chooseCurrent(gallery)">
+            <div class="w-1/5 lg:w-1/6 h-12 lg:h-20 flex-none overflow-hidden border-2" :class="index === currentIndex ? 'opacity-70 border-red-600 rounded' : ''"  v-for="(gallery, index) in data" :key="index" @mouseenter="chooseCurrent(index)">
                 <img :src="gallery.image" class="w-full h-full object-cover" alt="">
             </div>
         </div>
@@ -17,49 +17,46 @@
 export default {
     data(){
         return{
-            current: {
-                 name: "gallery 1",
-                 image: "https://pixabay.com/get/g6e968ee81a391e9d5468ff4013d72c945a9ec560039fb42f29659a7860be57e3092fa0ddc502bdb3f5afd0b397b14626_640.jpg"
-            },
+            currentIndex: 0,
             data: [
-                {
+                 {
                     name: "gallery 1",
-                    image: "https://pixabay.com/get/g6e968ee81a391e9d5468ff4013d72c945a9ec560039fb42f29659a7860be57e3092fa0ddc502bdb3f5afd0b397b14626_640.jpg"
+                    image: "https://images.pexels.com/photos/2532442/pexels-photo-2532442.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 },
                 {
                     name: "gallery 2",
-                    image: "https://pixabay.com/get/g57502d0ca5d9d1e570bb6385abc1f3173932349ea7e98ebb2941dcbadea889bc0edfa52ec7ac0c943fbf24c260cdcbc2_640.jpg"
+                    image: "https://images.pexels.com/photos/674574/pexels-photo-674574.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 },
                 {
                     name: "gallery 3",
-                    image: "https://pixabay.com/get/g8366b45ae6eaea4f8ece13aa2ebf18779a611fb56d9ddcaee7b1005010cf8d940ea4ea89a3ca9723628d81a285b4b307_640.jpg"
+                    image: "https://images.pexels.com/photos/6470280/pexels-photo-6470280.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 },
                 {
                     name: "gallery 4",
-                    image: "https://pixabay.com/get/gb2e89249669da70fdc68df7b4a4f78215733c34bbc27f2f99096c6ca59594b7b681c422c21bc60cfa8d408badfb72563_640.jpg"
+                    image: "https://images.pexels.com/photos/6037918/pexels-photo-6037918.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 },
                 {
                     name: "gallery 5",
-                    image: "https://pixabay.com/get/g4df2129ef836b33128d033ed05862257e6e148a0010f8a516c5177bd87bb341ed0261278f07548f61409c4fc29c95fb3_640.jpg"
+                    image: "https://images.pexels.com/photos/3135801/pexels-photo-3135801.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 },
                 {
                     name: "gallery 6",
-                    image: "https://pixabay.com/get/gd0aa3bc7abb804015822a8f9de9ac450985fe78f9721f940f8578f28b31c456ede0f2dd3f64256ec43c5824b20eeefb5_640.jpg"
+                    image: "https://images.pexels.com/photos/3686791/pexels-photo-3686791.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 },
                 {
                     name: "gallery 7",
-                    image: "https://pixabay.com/get/g0ab944ebc94981d6f1312ad50a6538cb990bd564d753ccb532949066909dc51e7aece95b3aacbbc949ce1bf22337dc57_640.jpg"
+                    image: "https://images.pexels.com/photos/1524113/pexels-photo-1524113.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 },
                 {
                     name: "gallery 8",
-                    image: "https://pixabay.com/get/g9982d5e77c0fb3f0233f81f88dbae428574f1ac7d4ace2cd99e6e5a0ed0399a73197f24d99d1c11745c5b9f8eb22f8e5_640.jpg"
+                    image: "https://images.pexels.com/photos/2974623/pexels-photo-2974623.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 },
             ]
         }
     },
     methods:{
-        chooseCurrent(gallery){
-            this.current = gallery;
+        chooseCurrent(index){
+            this.currentIndex = index;
         }
     }
 }
