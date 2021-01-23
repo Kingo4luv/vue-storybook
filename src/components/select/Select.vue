@@ -46,13 +46,27 @@
                             </span>
                             <input v-model="search" type="text" class="w-full py-2 bg-white focus:outline-none text-gray-700 px-2">
                         </div>
-                        <ul v-if="filteredCountry.length > 0" tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-item-3" class="max-h-56 text-base overflow-auto focus:outline-none">
+                        <ul v-if="filteredCountry.length > 0" 
+                            tabindex="-1" 
+                            role="listbox" aria-labelledby="listbox-label" 
+                            aria-activedescendant="listbox-item-3" 
+                            class="max-h-56 text-base overflow-auto focus:outline-none"
+                            @focus="openList"
+                            @keyup.up.prevent="selectPrevOption"
+                            @keyup.down.prevent="selectNextOption"
+                            >
                             <!--
                             Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation.
 
                             Highlighted: "text-white bg-indigo-600", Not Highlighted: "text-gray-900"
                             -->
-                            <li tabindex="0" v-for="(country, index) in filteredCountry" @click="select(country)"  role="option" :class="currentCountry.name === country.name ? 'bg-gray-100' : ''" class="text-gray-900 cursor-pointer select-none relative py-2 hover:bg-gray-100 -ml-8 focus:outline-none" :key="index">
+                            <li tabindex="0" v-for="(country, index) in filteredCountry" 
+                            @click="select(country)"  
+                            role="option" :class="currentCountry.name === country.name ? 'bg-gray-100' : ''" 
+                            class="text-gray-900 cursor-pointer select-none relative py-2 hover:bg-gray-100 -ml-8 focus:outline-none" 
+                            :key="index"
+                            :aria-selected="activeOptionIndex === index"
+                            >
                                 <div class="flex items-center px-4" >
                                 
                                     <country-flag :country='country.icon' size='normal'/>
@@ -156,9 +170,26 @@ export default {
         closeList(){
             this.open = false;
         },
+        openList(){
+            this.open = true;
+        },
         select(country){
             this.currentCountry = country;
             this.closeList();
+        },
+        setupFocus() {
+            if (this.currentCountry) return;
+            this.currentCountry = this.filteredCountry[0];
+        },
+        selectPrevOption() {
+            // this.$emit('change', this.options[this.prevOptionIndex]);
+            this.currentCountry = this.filteredCountry[this.prevOptionIndex]
+           alert( this.filteredCountry[this.prevOptionIndex])
+        },
+        selectNextOption() {
+            // this.$emit('change', this.options[this.nextOptionIndex]);
+            // alert( this.filteredCountry[this.nextOptionIndex])
+             this.currentCountry = this.filteredCountry[this.nextOptionIndex]
         },
         
     },
@@ -168,7 +199,20 @@ export default {
             return this.data.filter((country) => {
                 return country.name.toLowerCase().match(this.search.toLowerCase());
             });
-        }
+        },
+        activeOptionIndex() {
+            return this.filteredCountry.findIndex(
+                x => x.name === this.currentCountry.name || x === this.currentCountry
+            );
+        },
+        prevOptionIndex() {
+            const next = this.activeOptionIndex - 1;
+            return next >= 0 ? next : this.filteredCountry.length - 1;
+        },
+        nextOptionIndex() {
+            const next = this.activeOptionIndex + 1;
+            return next <= this.filteredCountry.length - 1 ? next : 0;
+        },
     }
 }
 </script>

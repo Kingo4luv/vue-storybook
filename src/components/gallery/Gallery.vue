@@ -32,7 +32,7 @@ export default {
                 },
                 {
                     name: "gallery 3",
-                    image: "https://pixabay.com/get/g7c61d4b623f5bfa4aac37bd7b2f95cf6a4baeb72cde7f81fbaec760c0846a7b63498e616783de44d1eb17a6ec1a70a4d_640.jpg"
+                    image: "https://pixabay.com/get/g8366b45ae6eaea4f8ece13aa2ebf18779a611fb56d9ddcaee7b1005010cf8d940ea4ea89a3ca9723628d81a285b4b307_640.jpg"
                 },
                 {
                     name: "gallery 4",

@@ -12,7 +12,7 @@ const Template = (args, {
     components: {
         Gallery
     },
-    template: '<Gallery @onClick="onClick" v-bind="$props" />',
+    template: '<Gallery  v-bind="$props" />',
 });
 
 export const Default = Template.bind({});
