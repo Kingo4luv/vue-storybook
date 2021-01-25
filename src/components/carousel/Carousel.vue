@@ -27,9 +27,9 @@ export default {
         }
     },
     mounted(){
-        if(this.autoplay){
-            this.makeInvisible();
-        }
+
+        this.makeInvisible();
+      
     },
     data(){
         return{
@@ -73,10 +73,13 @@ export default {
     },
     methods:{
         makeInvisible(){
-           timeout = setTimeout(() => {
+           if(this.autoplay){
+               timeout = setTimeout(() => {
                 this.show = false;
                 this.makeVisible();
-            }, this.interval)
+               }, this.interval)
+           } 
+           
         },
         makeVisible(){
             this.currentIndex = this.nextOptionIndex;
