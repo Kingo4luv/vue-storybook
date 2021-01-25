@@ -17,8 +17,8 @@ const Template = (args, {
 
 export const Default = Template.bind({});
 Default.args = {
-    title: "Firstname",
     value: "",
+    placeHolder: "Enter text...."
 };
 
 export const Password = Template.bind({});
@@ -34,6 +34,21 @@ Email.args = {
     value: "",
     type: "email",
     placeHolder: "Enter Email"
+};
+
+export const Address = Template.bind({});
+Address.args = {
+    title: "Address",
+    value: "",
+    type: "address",
+    placeHolder: "Enter Address"
+};
+
+export const Number = Template.bind({});
+Number.args = {
+    title: "Number",
+    value: "",
+    type: "number",
 };
 
 export const WithPlaceholder = Template.bind({});
