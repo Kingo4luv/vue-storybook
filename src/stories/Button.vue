@@ -1,5 +1,10 @@
 <template>
-  <button type="button" :class="classes" @click="onClick" :style="style">{{ label }}</button>
+  <button type="button" :class="classes" @click="onClick" :style="style">
+    <svg class="animate-spin h-5 w-5 mr-3 text-blue-400 border" fill="none" viewBox="0 0 24 24">
+    <!-- ... -->
+  </svg>
+    {{ label }}
+  </button>
 </template>
 
 <script>
