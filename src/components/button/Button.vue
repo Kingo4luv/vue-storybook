@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import academy from '../icons/academy-cap.svg';
 export default {
     props:{
         label:{
