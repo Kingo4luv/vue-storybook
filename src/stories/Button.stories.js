@@ -31,6 +31,13 @@ Default.args = {
   label: 'Button',
 };
 
+export const Loading = Template.bind({});
+Loading.args = {
+  primary: true,
+  loading: true,
+  label: 'Processing...',
+};
+
 export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
