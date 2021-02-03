@@ -1,6 +1,6 @@
 <template>
-    <div class="w-full flex">
-           <div class="mx-auto mt-12 w-full h-52 lg:h-96 sm:w-2/5">
+    <div class="w-full flex bg-gray-100">
+           <div class="mx-auto mt-12 w-full h-screen sm:max-w-sm">
                <Card />
            </div>
     </div>
