@@ -32,3 +32,9 @@ WithAction.args = {
     withImage: false,
     withAction: true,
 };
+
+export const WithImageAndAction = Template.bind({});
+WithImageAndAction.args = {
+    withImage: true,
+    withAction: true,
+};
