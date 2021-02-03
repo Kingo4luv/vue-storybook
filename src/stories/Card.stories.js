@@ -22,18 +22,18 @@ Default.args = {
     withAction: false,
 };
 
-export const WithImage = Template.bind({});
-WithImage.args = {
-    title: "Card Title with image Only",
-    withImage: true,
-    withAction: false,
-};
-
 export const WithAction = Template.bind({});
 WithAction.args = {
     title: "Card Title with action only",
     withImage: false,
     withAction: true,
+};
+
+export const WithImage = Template.bind({});
+WithImage.args = {
+    title: "Card Title with image Only",
+    withImage: true,
+    withAction: false,
 };
 
 export const WithImageAndAction = Template.bind({});
