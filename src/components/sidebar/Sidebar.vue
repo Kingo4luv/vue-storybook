@@ -1,6 +1,6 @@
 <template>
     <div class="bg-white rounded border">
-        <div class="header py-8 px-4 border-b flex flex-col items-center justify-center space-y-2">
+        <div class="header py-6 px-4 border-b flex flex-col items-center justify-center space-y-2">
             <span class="w-24 h-24 rounded-full bg-gray-200"></span>
             <div class="flex flex-col justify-center items-center">
                 <h4 class="text-xl font-medium text-gray-700">John Doesun</h4>
