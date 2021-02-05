@@ -1,6 +1,6 @@
 <template>
     <div class="w-full flex bg-gray-100">
-           <div class="mx-auto mt-12 w-full h-screen sm:max-w-sm">
+           <div class="mx-auto mt-12 w-full h-screen sm:max-w-xs">
                <Sidebar />
            </div>
     </div>
