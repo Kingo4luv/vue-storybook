@@ -68,13 +68,13 @@ export default {
     computed:{
         direction(){
             if(this.position === "top-left"){
-                return `top-0 left-0 ml-2 mt-2`;
+                return `top-0 left-0 ml-0 sm:ml-2 mt-2`;
             }else if(this.position === "bottom-left"){
                 return `bottom-0 left-0 ml-2 mb-2`;
             }else if(this.position === "bottom-right"){
                 return `bottom-0 right-0 mr-2 mb-2`;
             }
-            return `top-0 right-0 mr-2 mt-2`;
+            return `top-0 right-0 mr-0 sm:mr-2 mt-2`;
         },
         transitionEnter(){
             if(this.position === "top-left" || this.position === "bottom-left"){
