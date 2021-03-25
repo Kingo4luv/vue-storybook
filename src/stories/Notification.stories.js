@@ -8,7 +8,7 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Notification },
-  template: '<Notification @onClick="onClick" v-bind="$props" />',
+  template: '<Notification  v-bind="$props" />',
 });
 
 export const Default = Template.bind({});

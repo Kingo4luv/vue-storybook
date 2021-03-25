@@ -8,7 +8,7 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Accordion },
-  template: '<Accordion @onClick="onClick" v-bind="$props" />',
+  template: '<Accordion  v-bind="$props" />',
 });
 
 export const Default = Template.bind({});

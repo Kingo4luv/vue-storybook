@@ -12,7 +12,7 @@ const Template = (args, {
     components: {
         Sidebar
     },
-    template: '<Sidebar @onClick="onClick" v-bind="$props" />',
+    template: '<Sidebar  v-bind="$props" />',
 });
 
 export const Default = Template.bind({});

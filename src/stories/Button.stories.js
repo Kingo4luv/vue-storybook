@@ -23,7 +23,7 @@ const Template = (args, {
   components: {
     Button
   },
-  template: '<Button @onClick="onClick" v-bind="$props" />',
+  template: '<Button v-bind="$props" />',
 });
 
 export const Default = Template.bind({});

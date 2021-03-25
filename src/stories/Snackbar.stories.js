@@ -8,7 +8,7 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Snackbar },
-  template: '<Snackbar @onClick="onClick" v-bind="$props" />',
+  template: '<Snackbar  v-bind="$props" />',
 });
 
 export const TopRight  = Template.bind({});

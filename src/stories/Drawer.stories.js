@@ -8,7 +8,7 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Drawer },
-  template: '<Drawer @onClick="onClick" v-bind="$props" />',
+  template: '<Drawer  v-bind="$props" />',
 });
 
 export const Default  = Template.bind({});

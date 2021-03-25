@@ -12,7 +12,7 @@ const Template = (args, {
   components: {
     List
   },
-  template: '<List @onClick="onClick" v-bind="$props" />',
+  template: '<List  v-bind="$props" />',
 });
 
 export const Default = Template.bind({});

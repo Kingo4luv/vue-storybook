@@ -13,7 +13,7 @@ const Template = (args, {
   components: {
     Alert
   },
-  template: '<Alert @onClick="onClick" v-bind="$props" />',
+  template: '<Alert v-bind="$props" />',
 });
 
 export const BasicAlert = Template.bind({});

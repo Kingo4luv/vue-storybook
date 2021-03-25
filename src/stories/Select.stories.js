@@ -12,7 +12,7 @@ const Template = (args, {
   components: {
     Select
   },
-  template: '<Select @onClick="onClick" v-bind="$props" />',
+  template: '<Select  v-bind="$props" />',
 });
 
 export const Default = Template.bind({});
